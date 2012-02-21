@@ -1,0 +1,28 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+s|TextInput {
+	error-color:grey;
+}
+
+.errorTip {
+	borderColor: grey;
+	color: white;
+	fontSize: 10;
+	fontWeight: normal;
+}
+
+.text-roll-over-decoration 
+{
+	font-family: Arial;
+	text-decoration:underline;	
+	/*font-size:14px;*/
+}
+
+.text-selected
+{
+	font-family: Arial;
+	text-decoration:underline;	
+	font-size:14px;
+}

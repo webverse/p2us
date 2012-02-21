@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 xmlns:mq = "com.mapquest.tilemap.*"
+		 xmlns:components="us.party2.view.components.*"
+		 width="100%" height="100%" >
+	
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.mapquest.LatLng;
+			import com.mapquest.tilemap.InfoWindow;
+			import com.mapquest.tilemap.controls.inputdevice.MouseWheelZoomControl;
+			import com.mapquest.tilemap.controls.shadymeadow.SMLargeZoomControl;
+			import com.mapquest.tilemap.controls.shadymeadow.SMViewControl;
+			import com.mapquest.tilemap.pois.MapIcon;
+			import com.mapquest.tilemap.pois.Poi;
+			
+			import mx.events.FlexEvent;
+			
+			import spark.components.Image;
+			
+			import us.party2.model.pojo.LfmPojo;
+			import us.party2.presentation.MainPresentationModel;
+			import us.party2.presentation.QueryPresentationModel;
+			import us.party2.utils.Constants;
+			
+			[Bindable]
+			[Inject("mainPresentationModel")]
+			public var model:MainPresentationModel;
+			
+			[Bindable]
+			[Inject("queryPresentationModel")]
+			public var queryModel:QueryPresentationModel;
+
+			protected function logoClickHandler(event:MouseEvent):void
+			{
+				model.changeState(MainPresentationModel.MAIN_STATE);
+			}
+
+			protected function pageNavCreationCompleteHandler(event:FlexEvent):void
+			{
+				pageNav.init();
+				queryModel.pn = pageNav;
+			}
+			
+			private function mapStart():void {
+				//add controls to map
+				map.addControl(new SMLargeZoomControl());
+				map.addControl(new SMViewControl());
+				map.addControl(new MouseWheelZoomControl());
+				
+				queryModel.map = map;
+				queryModel.loadMap();
+			}
+
+		]]>
+	</fx:Script>
+	
+	<s:VGroup width="100%" height="100%">
+		<s:Group width="100%" height="85">
+		
+			<s:HGroup width="100%" height="85">
+			
+				<s:Group id="topGroup" width="50%" height="85">
+					<s:layout>
+						<s:HorizontalLayout verticalAlign="middle" horizontalAlign="left" />
+					</s:layout>
+					<s:Spacer />
+					<components:Logo click="logoClickHandler(event)" left="20"/>
+				</s:Group>
+				
+				<s:Group width="50%" height="85">
+					<s:layout>
+						<s:HorizontalLayout verticalAlign="middle" horizontalAlign="right" />
+					</s:layout>
+					<components:SmallQueryPanel id="smallQuery" right="10" />
+				</s:Group>
+			</s:HGroup>
+			
+		</s:Group>
+		
+		<s:Group id="middleGroup" width="100%" height="100%">
+			<mx:HDividedBox width="100%" height="100%">
+				
+				<s:Group id="eastGroup" width="30%" height="100%">
+					<s:List id="resultList" width="100%" height="100%" borderVisible="false" dataProvider="{queryModel.listProvider}"/>
+				</s:Group>
+				
+				<s:Group id="westGroup" width="70%" height="100%">
+					<mq:TilemapComponent 
+						id="map" 
+						key="{Constants.MAP_KEY}" 
+						width="100%" height="100%" 
+						zoom="4" creationComplete="{mapStart()}"/>
+				</s:Group>
+				
+			</mx:HDividedBox>
+		</s:Group>
+		
+		<s:Group id="bottomGroup" width="100%" height="50">
+			<components:PageNavigator 
+				id="pageNav" 
+				baseLimit="3" 
+				referWindow="{smallQuery}" 
+				totRec="{queryModel.totalRecords}" 
+				recPerPage="{queryModel.perPage}" 
+				creationComplete="pageNavCreationCompleteHandler(event)"/> 
+		</s:Group>
+		
+	</s:VGroup>
+	
+</s:Group>

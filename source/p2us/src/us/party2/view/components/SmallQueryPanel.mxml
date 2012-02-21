@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"
+		 width="384" height="72">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			import us.party2.presentation.MainPresentationModel;
+			import us.party2.presentation.QueryPresentationModel;
+			
+			[Bindable]
+			[Inject("mainPresentationModel")]
+			public var model:MainPresentationModel;
+			
+			[Bindable]
+			[Inject("queryPresentationModel")]
+			public var queryModel:QueryPresentationModel;
+			
+			protected function toggleBtnClickHandler(event:MouseEvent):void
+			{
+				model.toggleSelected = event.currentTarget.id;
+				
+				model.checkToggle();
+			}
+
+			protected function enterHandler(event:FlexEvent):void
+			{
+				if (txtQuery.text) {
+					txtQuery.errorString = null;
+					var data:Object = new Object();
+					data.stmt = txtQuery.text;
+					data.toggle = model.toggleSelected;
+					data.page = 1;
+					data.newQuery = true;
+					queryModel.query(data);
+					
+				} else
+					txtQuery.errorString = "What are you looking for?";
+			}
+			
+			public function navigate(page:String):void {
+				var data:Object = new Object();
+				data.stmt = txtQuery.text;
+				data.toggle = model.toggleSelected;
+				data.page = page;
+				data.newQuery = false;
+				queryModel.query(data);
+			}
+
+		]]>
+	</fx:Script>
+		
+	
+	<s:ToggleButton id="toggleBtnCity" x="10" y="12" label="City"
+					click="toggleBtnClickHandler(event)" selected="{model.citySelected}"/>
+	<s:ToggleButton id="toogleBtnParty" x="82" y="12" label="Party"
+					click="toggleBtnClickHandler(event)" selected="{model.partySelected}"/>
+	
+	<s:TextInput x="10" y="35" width="363" id="txtQuery" enter="enterHandler(event)" text="{model.storedQuery}"/>
+	
+</s:Group>

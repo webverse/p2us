@@ -1,0 +1,17 @@
+<swiz:Swiz 
+	beanProviders="{[RemoteObjectBeans,PresentationModelBeans,ControllerBeans]}" 
+	xmlns:swiz="http://swiz.swizframework.org" 
+	xmlns:mx="http://www.adobe.com/2006/mxml">	
+	
+	<swiz:loggingTargets>
+		<swiz:SwizTraceTarget id="traceTarget" />
+	</swiz:loggingTargets>
+	
+	<swiz:config>
+		<swiz:SwizConfig 
+			eventPackages="us.party2.event.*"				
+			viewPackages="us.party2.view.*"
+			/>
+	</swiz:config>			
+	
+</swiz:Swiz>

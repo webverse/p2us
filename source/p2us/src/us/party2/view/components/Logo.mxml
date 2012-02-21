@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="180" height="57">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:Image x="1" y="1" source="assets/logo.png"/>
+	<s:Label x="53" y="8" fontSize="24" fontWeight="bold" text="party2.us"/>
+	<s:Label x="127" y="29" text="alpha"/>	
+	
+</s:Group>

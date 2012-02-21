@@ -1,0 +1,76 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,org.eclipse.ui.net,1.2.100.I20110511-0800,"org.eclipse.ui.net",1329848960872
+started,bundle,org.eclipse.ui.views,3.6.0.I20110412-0800,"org.eclipse.ui.views",1329848960873
+started,bundle,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"org.eclipse.ui.workbench",1329848960874
+started,bundle,org.eclipse.ui.workbench.texteditor,3.7.0.v20110505-0800,"org.eclipse.ui.workbench.texteditor",1329848960875
+started,bundle,org.eclipse.update.configurator,3.3.100.v20100512,"org.eclipse.update.configurator",1329848960875
+started,bundle,org.eclipse.update.core,3.2.500.v20110330,"org.eclipse.update.core",1329848960876
+started,bundle,org.eclipse.update.scheduler,3.2.300.v20100512,"org.eclipse.update.scheduler",1329848960876
+started,bundle,org.eclipse.wst.common.emf,1.2.100.v201101101900,"org.eclipse.wst.common.emf",1329848960877
+started,bundle,org.eclipse.wst.common.emfworkbench.integration,1.2.101.v201107140600,"org.eclipse.wst.common.emfworkbench.integration",1329848960878
+started,bundle,org.eclipse.wst.common.frameworks,1.2.101.v201107192200,"org.eclipse.wst.common.frameworks",1329848960878
+started,bundle,org.eclipse.wst.common.project.facet.core,1.4.200.v201103170332,"org.eclipse.wst.common.project.facet.core",1329848960879
+started,bundle,org.eclipse.wst.web,1.1.500.v201104251400,"org.eclipse.wst.web",1329848960879
+started,bundle,com.adobe.flash.codemodel.core,4.0.1.277662,"com.adobe.flash.codemodel.core",1329848960880
+started,bundle,com.adobe.flash.codemodel.osgi,4.0.1.277662,"com.adobe.flash.codemodel.osgi",1329848960880
+started,bundle,com.adobe.flash.profiler,4.0.1.277662,"com.adobe.flash.profiler",1329848960881
+started,bundle,com.adobe.flexbuilder.ajaxbridge,4.0.1.277662,"com.adobe.flexbuilder.ajaxbridge",1329848960881
+started,bundle,com.adobe.flexbuilder.as.editor,4.0.1.277662,"com.adobe.flexbuilder.as.editor",1329848960882
+started,bundle,com.adobe.flexbuilder.dcrad,4.0.1.277662,"com.adobe.flexbuilder.dcrad",1329848960883
+started,bundle,com.adobe.flexbuilder.debug.ui,4.0.1.277662,"com.adobe.flexbuilder.debug.ui",1329848960883
+started,bundle,com.adobe.flexbuilder.editorcore,4.0.1.277662,"com.adobe.flexbuilder.editorcore",1329848960884
+started,bundle,com.adobe.flexbuilder.editors.derived,4.0.1.277662,"com.adobe.flexbuilder.editors.derived",1329848960884
+started,bundle,com.adobe.flexbuilder.exportimport,4.0.1.277662,"com.adobe.flexbuilder.exportimport",1329848960885
+started,bundle,com.adobe.flexbuilder.flashbridge,4.0.1.277662,"com.adobe.flexbuilder.flashbridge",1329848960885
+started,bundle,com.adobe.flexbuilder.flexunit,4.0.1.277662,"com.adobe.flexbuilder.flexunit",1329848960886
+started,bundle,com.adobe.flexbuilder.importartwork,4.0.1.277662,"com.adobe.flexbuilder.importartwork",1329848960887
+started,bundle,com.adobe.flexbuilder.launching.ui,4.0.1.277662,"com.adobe.flexbuilder.launching.ui",1329848960888
+started,bundle,com.adobe.flexbuilder.multisdk,4.0.1.277662,"com.adobe.flexbuilder.multisdk",1329848960888
+started,bundle,com.adobe.flexbuilder.mxml.editor,4.0.1.277662,"com.adobe.flexbuilder.mxml.editor",1329848960889
+started,bundle,com.adobe.flexbuilder.mxmlmodel,4.0.1.277662,"com.adobe.flexbuilder.mxmlmodel",1329848960889
+started,bundle,com.adobe.flexbuilder.project,4.0.1.277662,"com.adobe.flexbuilder.project",1329848960889
+started,bundle,com.adobe.flexbuilder.project.ui,4.0.1.277662,"com.adobe.flexbuilder.project.ui",1329848960890
+started,bundle,com.adobe.flexbuilder.ui,4.0.1.277662,"com.adobe.flexbuilder.ui",1329848960891
+started,bundle,com.adobe.flexbuilder.utils.osnative,4.0.1.277662,"com.adobe.flexbuilder.utils.osnative",1329848960891
+started,bundle,com.adobe.flexide.amt,4.0.1.277662,"com.adobe.flexide.amt",1329848960892
+started,bundle,com.adobe.flexide.as.core,4.0.1.277662,"com.adobe.flexide.as.core",1329848960893
+started,bundle,com.adobe.flexide.css.core,4.0.1.277662,"com.adobe.flexide.css.core",1329848960894
+started,bundle,com.adobe.flexide.editorcore,4.0.1.277662,"com.adobe.flexide.editorcore",1329848960894
+started,bundle,com.adobe.flexide.mxml.core,4.0.1.277662,"com.adobe.flexide.mxml.core",1329848960895
+started,bundle,com.adobe.flexide.nativelibs,4.0.1.277662,"com.adobe.flexide.nativelibs",1329848960896
+started,bundle,com.adobe.model.core,1.0.2.v20100315273147,"com.adobe.model.core",1329848960897
+started,bundle,org.eclipse.mylyn.bugzilla.core,3.6.4.v20111106-0100,"org.eclipse.mylyn.bugzilla.core",1329848960897
+started,bundle,org.eclipse.mylyn.tasks.ui,3.6.4.v20111117-0100,"org.eclipse.mylyn.tasks.ui",1329848960898
+started,bundle,org.eclipse.team.svn.core,0.7.9.I20110819-1700,"org.eclipse.team.svn.core",1329848960899
+started,bundle,org.eclipse.team.svn.mylyn,0.7.9.I20110318-1700,"org.eclipse.team.svn.mylyn",1329848960899
+started,bundle,org.eclipse.team.svn.revision.graph,0.7.9.I20110318-1700,"org.eclipse.team.svn.revision.graph",1329848960900
+started,bundle,org.eclipse.team.svn.ui,0.7.9.I20110819-1700,"org.eclipse.team.svn.ui",1329848960900
+started,bundle,org.polarion.eclipse.team.svn.connector.javahl15,2.2.2.I20110819-1700,"org.polarion.eclipse.team.svn.connector.javahl15",1329848960901
+started,bundle,org.polarion.eclipse.team.svn.connector.javahl16,2.2.2.I20110819-1700,"org.polarion.eclipse.team.svn.connector.javahl16",1329848960901
+started,bundle,org.polarion.eclipse.team.svn.connector.svnkit15,2.2.2.I20110819-1700,"org.polarion.eclipse.team.svn.connector.svnkit15",1329848960901
+started,bundle,org.polarion.eclipse.team.svn.connector.svnkit16,2.2.2.I20110819-1700,"org.polarion.eclipse.team.svn.connector.svnkit16",1329848960901
+started,bundle,org.polarion.eclipse.team.svn.connector.svnkit16l,2.2.2.I20110819-1700,"org.polarion.eclipse.team.svn.connector.svnkit16l",1329848960902
+started,bundle,org.eclipse.egit.core,1.1.0.201109151100-r,"org.eclipse.egit.core",1329848960902
+started,bundle,org.eclipse.egit.ui,1.1.0.201109151100-r,"org.eclipse.egit.ui",1329848960903
+started,bundle,org.eclipse.jgit,1.1.0.201109151100-r,"org.eclipse.jgit",1329848960904
+started,bundle,org.eclipse.mylyn.github.ui,1.1.0.201109151100-r,"org.eclipse.mylyn.github.ui",1329848960905
+os,sysinfo,,,"win32",1329848960907
+arch,sysinfo,,,"x86",1329848960907
+ws,sysinfo,,,"win32",1329848960907
+locale,sysinfo,,,"pt_BR",1329848960907
+processors,sysinfo,,,"4",1329848960908
+java.runtime.name,sysinfo,,,"Java(TM) SE Runtime Environment",1329848960908
+java.runtime.version,sysinfo,,,"1.6.0_30-b12",1329848960908
+java.specification.name,sysinfo,,,"Java Platform API Specification",1329848960908
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1329848960908
+java.specification.version,sysinfo,,,"1.6",1329848960908
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1329848960908
+java.version,sysinfo,,,"1.6.0_30",1329848960908
+java.vm.info,sysinfo,,,"mixed mode, sharing",1329848960908
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1329848960908
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1329848960908
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1329848960908
+java.vm.specification.version,sysinfo,,,"1.0",1329848960908
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1329848960908
+java.vm.version,sysinfo,,,"20.5-b03",1329848960908
+activated,workbench,org.eclipse.ui.workbench,3.7.0.I20110519-0100,"",1329848961848

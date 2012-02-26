@@ -3,10 +3,10 @@ package assets
 	public class Assets
 	{
 		
-		[Embed (source="/assets/blue-dot.png" )]
-		public static const BLUE_DOT:Class;
+		[Embed (source="/assets/black-marker.png" )]
+		public static const BLACK_MARKER:Class;
 		
-		[Embed (source="/assets/yellow-dot.png" )]
-		public static const YELLOW_DOT:Class;
+		[Embed (source="/assets/white-marker.png" )]
+		public static const WHITE_MARKER:Class;
 	}
 }

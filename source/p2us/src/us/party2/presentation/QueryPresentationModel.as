@@ -3,6 +3,7 @@ package us.party2.presentation
 	import assets.Assets;
 	
 	import com.mapquest.LatLng;
+	import com.mapquest.tilemap.InfoWindow;
 	import com.mapquest.tilemap.TilemapComponent;
 	import com.mapquest.tilemap.pois.MapIcon;
 	import com.mapquest.tilemap.pois.Poi;
@@ -17,6 +18,7 @@ package us.party2.presentation
 	
 	import us.party2.event.QueryEvent;
 	import us.party2.model.pojo.LfmPojo;
+	import us.party2.view.components.InfoViz;
 	import us.party2.view.components.PageNavigator;
 	
 	[Bindable]
@@ -72,6 +74,16 @@ package us.party2.presentation
 					poi.infoContent = strContent;
 					poi.addEventListener(MouseEvent.CLICK, onPoiClick);
 					
+					/*
+					map.infoWindow = new InfoWindow(map.tileMap);
+					
+					var infoViz:InfoViz = new InfoViz();
+					infoViz.width = 400;
+					infoViz.height = 300;
+					
+					poi.infoContent = infoViz;
+					*/
+					
 					map.addShape(poi);
 					
 					count++;
@@ -96,14 +108,14 @@ package us.party2.presentation
 		
 		private function buildDefaultIcon():MapIcon {
 			var icon:MapIcon = new MapIcon();
-			icon.setImage(new Assets.YELLOW_DOT(), 32, 32);
+			icon.setImage(new Assets.BLACK_MARKER(), 32, 41);
 			
 			return icon;
 		}
 		
 		private function buildSelectedIcon():MapIcon {
 			var icon:MapIcon = new MapIcon();
-			icon.setImage(new Assets.BLUE_DOT(), 32, 32);
+			icon.setImage(new Assets.WHITE_MARKER(), 32, 41);
 			
 			return icon;
 		}

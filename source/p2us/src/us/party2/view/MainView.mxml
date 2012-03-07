@@ -42,7 +42,7 @@
 	<!-- testar oAuth -->
 	<components:IconButton id="twitterButton"  
 						   icon="@Embed('/assets/logo_twitter.png')"
-						   click="twitterButton_clickHandler(event)" left="10" top="10" includeIn="MAIN"/>
+						   click="twitterButton_clickHandler(event)" left="10" top="10" includeIn="MAIN" visible="false"/>
 	
 	<s:Group height="100%" width="100%">
 		<s:layout>

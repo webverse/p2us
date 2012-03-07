@@ -1,8 +1,6 @@
 package us.party2.controller
 {
 	import mx.collections.ArrayCollection;
-	import mx.controls.Alert;
-	import mx.rpc.events.FaultEvent;
 	import mx.rpc.events.ResultEvent;
 	
 	import us.party2.model.adapter.IRESTRequesterAdapter;
@@ -40,10 +38,15 @@ package us.party2.controller
 			
 			storedQuery = data.stmt;
 			
+			/*
 			if (data.toggle == Constants.TOGGLE_CITY)
 				requester = RESTRequesterFactory.createLfmCityRequester(data.stmt, data.page);
 			else
 				requester = RESTRequesterFactory.createLfmPartyRequester(data.stmt, data.page);
+			*/
+			
+			requester = RESTRequesterFactory.createLfmRequester(data.stmt, data.page,
+				data.toggle == Constants.TOGGLE_CITY ? Constants.LFM_CITY_URL : Constants.LFM_ARTIST_URL);
 			
 			requester.consumer.httpService.addEventListener(ResultEvent.RESULT, onRequestResult);
 			requester.request();
@@ -73,6 +76,7 @@ package us.party2.controller
 				p.startDate = o.startDate;
 				//p.tags;
 				dataProvider.addItem(p);
+				
 			}
 			
 			queryModel.listProvider = dataProvider;

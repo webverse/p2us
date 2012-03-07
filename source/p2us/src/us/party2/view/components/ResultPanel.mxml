@@ -42,8 +42,7 @@
 				model.changeState(MainPresentationModel.MAIN_STATE);
 			}
 
-			protected function pageNavCreationCompleteHandler(event:FlexEvent):void
-			{
+			protected function pageNavCreationCompleteHandler(event:FlexEvent):void {
 				pageNav.init();
 				queryModel.pn = pageNav;
 			}
@@ -85,10 +84,19 @@
 		</s:Group>
 		
 		<s:Group id="middleGroup" width="100%" height="100%">
+				
 			<mx:HDividedBox width="100%" height="100%">
 				
 				<s:Group id="eastGroup" width="30%" height="100%">
-					<s:List id="resultList" width="100%" height="100%" borderVisible="false" dataProvider="{queryModel.listProvider}"/>
+					<mx:VDividedBox height="100%" width="100%">
+						<s:Group height="50%" width="100%" id="listGroup">
+							<s:List id="resultList" width="100%" height="100%" borderVisible="false" dataProvider="{queryModel.listProvider}"/>
+						</s:Group>
+						<s:Group height="50%" width="100%" id="infoGroup">
+							<components:InfoViz id="infoViz" />
+						</s:Group>
+					</mx:VDividedBox>
+						
 				</s:Group>
 				
 				<s:Group id="westGroup" width="70%" height="100%">
@@ -100,6 +108,7 @@
 				</s:Group>
 				
 			</mx:HDividedBox>
+			
 		</s:Group>
 		
 		<s:Group id="bottomGroup" width="100%" height="50">

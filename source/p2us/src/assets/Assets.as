@@ -9,7 +9,7 @@ package assets
 		[Embed (source="/assets/white-marker.png" )]
 		public static const WHITE_MARKER:Class;
 		
-		//[Embed (source="/assets/lastfm.png" )]
-		//public static const LASTFM_LOGO:Class;
+		[Embed (source="/assets/lastfm.png" )]
+		public static const LASTFM_LOGO:Class;
 	}
 }

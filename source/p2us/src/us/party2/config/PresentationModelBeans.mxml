@@ -5,6 +5,7 @@
 		 xmlns:swiz="http://swiz.swizframework.org">
 	<fx:Script>
 		<![CDATA[
+			import us.party2.presentation.InfoVizPresentationModel;
 			import us.party2.presentation.MainPresentationModel;
 			import us.party2.presentation.QueryPresentationModel;
 		]]>
@@ -19,6 +20,11 @@
 		<swiz:Prototype id="queryPresentationModel" 
 						type="{QueryPresentationModel}" 
 						singleton="true"/>
+		
+		<swiz:Prototype id="infoVizPresentationModel" 
+						type="{InfoVizPresentationModel}" 
+						singleton="true"/>
+		
 	</fx:Declarations>
 	
 </swiz:BeanProvider>

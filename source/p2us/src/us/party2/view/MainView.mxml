@@ -4,30 +4,54 @@
 		 xmlns:mx="library://ns.adobe.com/flex/mx"
 		 xmlns:components="us.party2.view.components.*"
 		 width="100%" height="100%" 
-		 currentState="{model.currentState}"
+		 currentState="{model.currentState}" xmlns:twitter="com.soenkerohde.twitter.*"
 		 >
+	
+	<fx:Declarations>
+		
+	</fx:Declarations>
 	
 	<fx:Script>
 		<![CDATA[
+			import mx.controls.Alert;
+			
 			import us.party2.presentation.MainPresentationModel;
+			
+			//private var accessToken:OAuthToken;
 			
 			[Bindable]
 			[Inject("mainPresentationModel")]
 			public var model:MainPresentationModel;
 
+			protected function twitterButton_clickHandler(event:MouseEvent):void
+			{
+				Alert.show('twitter stuff!');
+				
+			}
+			
 		]]>
 	</fx:Script>
 	
-	<s:layout>
-		<s:VerticalLayout verticalAlign="middle" horizontalAlign="center"/>
-	</s:layout>
+	
 	
 	<s:states>
 		<s:State name="MAIN" />
 		<s:State name="RESULTS" />
 	</s:states>
 	
-	<components:QueryPanel includeIn="MAIN"/>
-	<components:ResultPanel includeIn="RESULTS" />
+	<!-- testar oAuth -->
+	<components:IconButton id="twitterButton"  
+						   icon="@Embed('/assets/logo_twitter.png')"
+						   click="twitterButton_clickHandler(event)" left="10" top="10" includeIn="MAIN"/>
+	
+	<s:Group height="100%" width="100%">
+		<s:layout>
+			<s:VerticalLayout verticalAlign="middle" horizontalAlign="center"/>
+		</s:layout>
+		
+		<components:QueryPanel includeIn="MAIN"/>
+		<components:ResultPanel includeIn="RESULTS" />	
+	</s:Group>
+	
 	
 </s:Group>

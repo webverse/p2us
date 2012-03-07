@@ -5,10 +5,12 @@
 			   xmlns:swiz="http://swiz.swizframework.org"
 			   xmlns:view="us.party2.view.*" 
 			   xmlns:config="us.party2.config.*" 
-			   minWidth="955" minHeight="600" >
+			   minWidth="955" minHeight="600" xmlns:twitter="com.soenkerohde.twitter.*" >
 	<fx:Declarations>
 		<config:Config />
+		
 	</fx:Declarations>
+	
 	<fx:Style source="/assets/style.css" />
 	<s:layout>
 		<s:VerticalLayout horizontalAlign="center" verticalAlign="middle" />

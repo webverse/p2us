@@ -11,5 +11,7 @@
 		
 		<controller:QueryController id="queryController" />
 		
+		<controller:InfoVizController id="infoVizControler" />
+		
 	</fx:Declarations>
 </swiz:BeanProvider>

@@ -12,12 +12,11 @@ package us.party2.presentation
 	import flash.events.MouseEvent;
 	
 	import mx.collections.ArrayCollection;
-	import mx.controls.Alert;
 	
-	import spark.primitives.BitmapImage;
-	
+	import us.party2.event.InfoVizEvent;
 	import us.party2.event.QueryEvent;
 	import us.party2.model.pojo.LfmPojo;
+	import us.party2.utils.P2Poi;
 	import us.party2.view.components.InfoViz;
 	import us.party2.view.components.PageNavigator;
 	
@@ -39,9 +38,9 @@ package us.party2.presentation
 		
 		private var _map:TilemapComponent;
 		
-		private var selectedPoi:Poi = null;
+		private var selectedPoi:P2Poi = null;
 		
-		private var currentPoi:Poi = null;
+		private var currentPoi:P2Poi = null;
 		
 		public function QueryPresentationModel() {}
 		
@@ -62,27 +61,18 @@ package us.party2.presentation
 					if (count == 0)
 						map.setCenter(new LatLng(pojo.lat, pojo.long), 4);
 					
-					var poi:Poi = new Poi(new LatLng(pojo.lat, pojo.long));
-					poi.rolloverAndInfoTitleText = pojo.title+" - "+pojo.startDate;
+					var poi:P2Poi = new P2Poi(new LatLng(pojo.lat, pojo.long));
+					poi.rolloverAndInfoTitleText = pojo.title;
 					
 					var strContent:String = new String();
 					strContent = pojo.title+"\n";
 					strContent += pojo.startDate+"\n";
-					strContent += "<a target='_blank' href='"+pojo.url+"'><font color='#0021FF'>"+pojo.url+"</font></a>";
+					strContent += "<a target='_blank' href='"+pojo.url+"'><font color='#0021FF'>Lastfm</font></a>";
 					
 					poi.icon = buildDefaultIcon();
 					poi.infoContent = strContent;
+					poi.data = pojo;
 					poi.addEventListener(MouseEvent.CLICK, onPoiClick);
-					
-					/*
-					map.infoWindow = new InfoWindow(map.tileMap);
-					
-					var infoViz:InfoViz = new InfoViz();
-					infoViz.width = 400;
-					infoViz.height = 300;
-					
-					poi.infoContent = infoViz;
-					*/
 					
 					map.addShape(poi);
 					
@@ -97,12 +87,14 @@ package us.party2.presentation
 			if (selectedPoi != null)
 				currentPoi = selectedPoi;
 			
-			selectedPoi = event.currentTarget as Poi;
+			selectedPoi = event.currentTarget as P2Poi;
 					
 			selectedPoi.icon = buildSelectedIcon();
 			
 			if (currentPoi != null && (currentPoi != selectedPoi))
 				currentPoi.icon = buildDefaultIcon();
+			
+			dispatcher.dispatchEvent(new InfoVizEvent(InfoVizEvent.LOAD_INFOVIZ, selectedPoi));
 			
 		}
 		

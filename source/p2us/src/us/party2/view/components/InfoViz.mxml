@@ -1,9 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
 		 xmlns:s="library://ns.adobe.com/flex/spark" 
-		 xmlns:mx="library://ns.adobe.com/flex/mx" width="400" height="300">
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 width="100%" height="100%"
+		 borderVisible="false"
+		 title="{infoModel.pojo.title}"
+		 >
+	
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:Label x="162" y="111" text="MAP INFO VIZ"/>
+	
+	<fx:Script>
+		<![CDATA[
+			import assets.Assets;
+			
+			import us.party2.presentation.InfoVizPresentationModel;
+			import us.party2.utils.DateUtils;
+			
+			[Bindable]
+			[Inject("infoVizPresentationModel")]
+			public var infoModel:InfoVizPresentationModel;
+			
+		]]>
+	</fx:Script>
+
+	<s:Group width="100%" height="100%" includeInLayout="{infoModel.inLayout}" left="10">
+		
+		<s:layout>
+			<s:VerticalLayout horizontalAlign="left" verticalAlign="top" />
+		</s:layout>
+		
+		<s:Spacer />
+		<s:Label text="Start date: {infoModel.pojo.startDate}" />
+		<s:Label text="Location: {infoModel.pojo.venue.name}"  />
+		<s:Label text="Street: {infoModel.pojo.venue.location.street}" />
+		<s:Label text="City: {infoModel.pojo.venue.location.city}" />
+		<s:Label text="Country: {infoModel.pojo.venue.location.country}" />
+		<s:Label text="Artist: {infoModel.pojo.artists.headliner}" />
+		<s:Label text="Days left: {DateUtils.daysBetween(new Date(), new Date(infoModel.pojo.startDate))}" />
+		<s:BitmapImage source="{Assets.LASTFM_LOGO}" />
+		
+	</s:Group>
+	
 </s:Panel>
+		

@@ -111,14 +111,14 @@ package us.party2.presentation
 		
 		private function buildDefaultIcon():MapIcon {
 			var icon:MapIcon = new MapIcon();
-			icon.setImage(new Assets.BLACK_MARKER(), 32, 41);
+			icon.setImage(new Assets.PARTY_BLACK(), 32, 41);
 			
 			return icon;
 		}
 		
 		private function buildSelectedIcon():MapIcon {
 			var icon:MapIcon = new MapIcon();
-			icon.setImage(new Assets.WHITE_MARKER(), 32, 41);
+			icon.setImage(new Assets.PARTY_WHITE(), 32, 41);
 			
 			return icon;
 		}

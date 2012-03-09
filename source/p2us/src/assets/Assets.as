@@ -11,5 +11,14 @@ package assets
 		
 		[Embed (source="/assets/lastfm.png" )]
 		public static const LASTFM_LOGO:Class;
+		
+		[Embed (source="/assets/party-black.png" )]
+		public static const PARTY_BLACK:Class;
+		
+		[Embed (source="/assets/party-white.png" )]
+		public static const PARTY_WHITE:Class;
+		
+		[Embed (source="/assets/party-inverse.png" )]
+		public static const PARTY_INVERSE:Class;
 	}
 }

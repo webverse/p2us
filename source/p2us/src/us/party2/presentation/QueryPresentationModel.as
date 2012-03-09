@@ -2,9 +2,12 @@ package us.party2.presentation
 {
 	import assets.Assets;
 	
+	import com.demonsters.debugger.MonsterDebugger;
 	import com.mapquest.LatLng;
 	import com.mapquest.tilemap.InfoWindow;
+	import com.mapquest.tilemap.ShapeCollection;
 	import com.mapquest.tilemap.TilemapComponent;
+	import com.mapquest.tilemap.pois.ForceDeclutter;
 	import com.mapquest.tilemap.pois.MapIcon;
 	import com.mapquest.tilemap.pois.Poi;
 	
@@ -54,8 +57,11 @@ package us.party2.presentation
 		
 		public function loadMap():void {
 			
+			var shapeCollection:ShapeCollection = new ShapeCollection();
+			
 			if (listProvider.length > 0) {
 				map.removeShapes();
+				map.declutter = new ForceDeclutter();
 				
 				var count:int = 0;
 				for each (var pojo:LfmPojo in listProvider) {
@@ -73,13 +79,14 @@ package us.party2.presentation
 					
 					poi.icon = buildDefaultIcon();
 					poi.infoContent = strContent;
-					poi.data = pojo;
+					poi.data = pojo;					
 					poi.addEventListener(MouseEvent.CLICK, onPoiClick);
-					
-					map.addShape(poi);
+					shapeCollection.add(poi);
 					
 					count++;
 				}
+				
+				map.addShapeCollection(shapeCollection);
 				
 			}	
 		}

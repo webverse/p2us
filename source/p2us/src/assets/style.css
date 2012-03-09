@@ -7,7 +7,7 @@ s|TextInput {
 }
 
 s|List {
-	/*selectionColor:grey;*/
+	selectionColor:#EDEDED;
 }
 
 .errorTip {

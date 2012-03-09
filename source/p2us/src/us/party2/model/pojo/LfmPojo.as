@@ -87,7 +87,7 @@ package us.party2.model.pojo
 		}
 		
 		public function toString():String {
-			return title+" - "+startDate;
+			return title+" - "+startDate+" - "+venue.name;
 		}
 	}
 }

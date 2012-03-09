@@ -6,6 +6,10 @@ s|TextInput {
 	error-color:grey;
 }
 
+s|List {
+	/*selectionColor:grey;*/
+}
+
 .errorTip {
 	borderColor: grey;
 	color: white;

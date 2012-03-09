@@ -90,7 +90,12 @@
 				<s:Group id="eastGroup" width="30%" height="100%">
 					<mx:VDividedBox height="100%" width="100%">
 						<s:Group height="50%" width="100%" id="listGroup">
-							<s:List id="resultList" width="100%" height="100%" borderVisible="false" dataProvider="{queryModel.listProvider}"/>
+							<s:List id="resultList" 
+									width="100%" 
+									height="100%" 
+									borderVisible="false"
+									selectedItem="{queryModel.selectedItem}"
+									dataProvider="{queryModel.listProvider}"/>
 						</s:Group>
 						<s:Group height="50%" width="100%" id="infoGroup">
 							<components:InfoViz id="infoViz" />

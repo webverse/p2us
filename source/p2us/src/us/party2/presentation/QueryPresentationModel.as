@@ -32,7 +32,9 @@ package us.party2.presentation
 		
 		private var _perPage:Number = 0;
 		
-		private var _listProvider:ArrayCollection = new ArrayCollection(); 
+		private var _listProvider:ArrayCollection = new ArrayCollection();
+		
+		private var _selectedItem:*;
 		
 		private var _pn:PageNavigator;
 		
@@ -88,6 +90,8 @@ package us.party2.presentation
 				currentPoi = selectedPoi;
 			
 			selectedPoi = event.currentTarget as P2Poi;
+			
+			selectedItem = selectedPoi.data;
 					
 			selectedPoi.icon = buildSelectedIcon();
 			
@@ -142,6 +146,14 @@ package us.party2.presentation
 		
 		public function get listProvider():ArrayCollection {
 			return _listProvider;
+		}
+		
+		public function set selectedItem(value:*):void {
+			_selectedItem = value;
+		}
+		
+		public function get selectedItem():* {
+			return _selectedItem;
 		}
 		
 		public function set pn(value:PageNavigator):void {

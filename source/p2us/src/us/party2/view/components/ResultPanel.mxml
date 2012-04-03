@@ -95,7 +95,8 @@
 									height="100%" 
 									borderVisible="false"
 									selectedItem="{queryModel.selectedItem}"
-									dataProvider="{queryModel.listProvider}"/>
+									dataProvider="{queryModel.listProvider}"
+									/>
 						</s:Group>
 						<s:Group height="50%" width="100%" id="infoGroup">
 							<components:InfoViz id="infoViz" />

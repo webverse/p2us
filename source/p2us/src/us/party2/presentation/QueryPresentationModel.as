@@ -4,23 +4,21 @@ package us.party2.presentation
 	
 	import com.demonsters.debugger.MonsterDebugger;
 	import com.mapquest.LatLng;
-	import com.mapquest.tilemap.InfoWindow;
-	import com.mapquest.tilemap.ShapeCollection;
 	import com.mapquest.tilemap.TilemapComponent;
-	import com.mapquest.tilemap.pois.ForceDeclutter;
 	import com.mapquest.tilemap.pois.MapIcon;
-	import com.mapquest.tilemap.pois.Poi;
 	
 	import flash.events.IEventDispatcher;
 	import flash.events.MouseEvent;
 	
 	import mx.collections.ArrayCollection;
+	import mx.collections.Sort;
+	import mx.collections.SortField;
 	
 	import us.party2.event.InfoVizEvent;
 	import us.party2.event.QueryEvent;
 	import us.party2.model.pojo.LfmPojo;
 	import us.party2.utils.P2Poi;
-	import us.party2.view.components.InfoViz;
+	import us.party2.utils.SortUtils;
 	import us.party2.view.components.PageNavigator;
 	
 	[Bindable]
@@ -57,11 +55,8 @@ package us.party2.presentation
 		
 		public function loadMap():void {
 			
-			var shapeCollection:ShapeCollection = new ShapeCollection();
-			
 			if (listProvider.length > 0) {
 				map.removeShapes();
-				map.declutter = new ForceDeclutter();
 				
 				var count:int = 0;
 				for each (var pojo:LfmPojo in listProvider) {
@@ -81,12 +76,11 @@ package us.party2.presentation
 					poi.infoContent = strContent;
 					poi.data = pojo;					
 					poi.addEventListener(MouseEvent.CLICK, onPoiClick);
-					shapeCollection.add(poi);
+					
+					map.addShape(poi);
 					
 					count++;
 				}
-				
-				map.addShapeCollection(shapeCollection);
 				
 			}	
 		}
@@ -111,14 +105,14 @@ package us.party2.presentation
 		
 		private function buildDefaultIcon():MapIcon {
 			var icon:MapIcon = new MapIcon();
-			icon.setImage(new Assets.PARTY_BLACK(), 32, 41);
+			icon.setImage(new Assets.BLACK_MARKER(), 31, 41);
 			
 			return icon;
 		}
 		
 		private function buildSelectedIcon():MapIcon {
 			var icon:MapIcon = new MapIcon();
-			icon.setImage(new Assets.PARTY_WHITE(), 32, 41);
+			icon.setImage(new Assets.WHITE_MARKER(), 31, 41);
 			
 			return icon;
 		}
